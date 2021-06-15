@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Mada&display=swap');
+html{
+    scroll-behavior: smooth;
+    direction: ltr;
+}
+
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:  sans-serif;
+}
+body{
+    background-color: #000;
+}
+.container{
+    height: 100vh;
+}
+
+/* the video controller */
+.VC{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 30vh;
+    justify-content: space-evenly;
+}
+#play{
+    height:10vh;
+    width: 10vw;
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0 auto;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: 0;
+}
+
+/* video range controller  */
+.range-c{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+#range{
+    width: 85%;
+}
+
+
+ /* voice controller */
+.voice-c{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+#voice {
+    width: 50%;
+}
+
+
+
+
+/* the video  */
+.video{
+    z-index: +1000;
+    position: fixed;
+    top: -111%;
+    left:-111%;
+    opacity: 1;
+}
+
+/* the video words con*/
+.wordsContainer {
+    height: 50vh;
+}
+
+/* main words  */
+.mainWords{
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    direction: rtl;
+    position: relative;
+}
+.mawords{
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%) ; 
+    transition:transform  .4s ease-in-out, opacity .5s ease-in-out;
+    font-size: 3rm;
+    font-family: 'Mada', sans-serif;
+    text-align: center;
+    color: #000;
+}
+.mainWords .active{
+    opacity: 1;
+    transform: translate(-50%, -50%) ;
+    color: #ffffff;
+}
+.m3{
+    opacity: 0;
+}
+
+/* sub subwords*/
+.subWords{
+    height: 40%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+/* custome the range input */
+.VC input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    box-shadow: 0 0 20px 1px black;
+}
+.VC input[type="range"]::-webkit-slider-runnable-track{
+    background: #d15e00;
+    opacity: 1;
+    appearance: none;
+    height: 5vh;
+    overflow: hidden;
+    box-shadow: 0 0 20px 0px #000 inset;
+}
+.VC input[type="range"]::-webkit-slider-thumb{
+    appearance: none;
+    background: #e77c24;
+    height: 5vh;
+    width: 3vw;
+    box-shadow: -100vw 0 0px 100vw #9201be , 100vw 0 20px 100vw rgb(83, 83, 83);
+}
